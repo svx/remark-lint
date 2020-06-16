@@ -13,8 +13,8 @@ set -o xtrace   # Debug mode expand everything and print it before execution
 cd "$(dirname "$0")" # Always run from script location
 
 test_image() {
-    docker build -t zemanlx/remark-lint .
-    docker run --rm -i -v "${PWD}:/lint/input:ro" zemanlx/remark-lint --frail .
+    docker build -t testthedocs/rocl .
+    docker run --rm -i -v "${PWD}:/lint/input:ro" testthedocs/rocl --frail .
 }
 
 branch="update/$(date --utc '+%Y-%m-%d')"
